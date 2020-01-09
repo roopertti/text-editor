@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:600,600i|Inconsolata:400,700|Quicksand:500,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+#modal-root {
+    position: relative;
+    z-index: 999;
+}
+
+$primary: #324E63;
+$secondary: #BCA9AE;
+$danger: #E43945;
+$light-1: #F9F4F1;
+$light-2: #F4D3C5;
+$light-gray: #e4e4e4;
+$gray: #535353;
+$quicksand: 'Quicksand', sans-serif;
+$crimsontext: 'Crimson Text', serif;
+$button-padding: 10px 20px;
+$button-margin: 5px;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    font-family: $quicksand;
+    background: transparent;
+    font-weight: 700;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    padding: $button-padding;
+    margin: $button-margin;
+    transition: 0.5s;
+
+    &:focus { outline: none; }
+}
+
+input {
+    height: 38px;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid $light-gray;
+    transition: 0.1s;
+    font-family: $quicksand;
+    font-size: 16px;
+    padding: 0 5px 0;
+    margin: 5px;
+
+    &:hover {
+        border: 1px solid darken($light-gray, 10%);
+    }
+    &:focus {
+        border: 1px solid $gray;
+        outline: 1px solid $primary;
+    }
+}
+
+.primary-btn {
+    color: $primary;
+    &:hover { background: $light-gray; }
+    &:focus { 
+        background-color: lighten($primary, 50%);
+    }
+}
+
+.primary-btn-raised {
+    color: $primary;
+    border: 1px solid $primary;
+
+    &:hover {
+        background: $light-gray;
+    }
+    &:focus {
+        background-color: lighten($primary, 50%);
+    }
+}
+
+.primary-btn-full {
+    color: white;
+    background: $primary;
+    &:hover {
+        background: darken($primary, 10%);
+    }
+    &:focus {
+        background: lighten($primary, 10%);
+    }
+}
+
+.danger-btn {
+    color: $danger;
+    &:hover { background: $light-gray; }
+    &:focus { 
+        background-color: lighten($danger, 30%);
+    }
+}
+
+.danger-btn-raised {
+    color: $danger;
+    border: 1px solid $danger;
+
+    &:hover {
+        background: $light-gray;
+    }
+    &:focus {
+        background: lighten($danger, 30%);
+    }
+}
+
+.danger-btn-full {
+    color: white;
+    background: $danger;
+    &:hover {
+        background: darken($danger, 10%);
+    }
+    &:focus {
+        background: lighten($danger, 10%);
+    }
+}
+
+.default-btn {
+    color: $gray;
+    &:hover { background: $light-gray; }
+    &:focus { 
+        background-color: lighten($gray, 50%);
+    }
+}
+
+.default-btn-raised {
+    color: $gray;
+    border: 1px solid $gray;
+
+    &:hover {
+        background: $light-gray;
+    }
+    &:focus {
+        background: lighten($gray, 50%);
+    }
+}
+
+.default-btn-full {
+    color: white;
+    background: $gray;
+    &:hover {
+        background: darken($gray, 10%);
+    }
+    &:focus {
+        background: lighten($gray, 10%);
+    }
+}
+
+.tooltip {
+    display: inline;
+    position: relative;
+
+    &:hover {
+        color: $primary;
+        text-decoration: none;
+    }
+
+    &:hover:after {
+        font-size: 12px;
+        font-weight: 500;
+        background: #111;
+        background: rgba(0,0,0,.8);
+        border-radius: 3px;
+        top: 32px;
+        color: #fff;
+        content: attr(data-title);
+        display: block;
+        left: .8em;
+        padding: 5px 9px;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 98;
+    }
+}
+
